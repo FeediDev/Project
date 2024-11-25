@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enseigant{% endblock %}
+
+{% block body %}
+    <h1>Enseigant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ enseigant.id }}</td>
+            </tr>
+            <tr>
+                <th>Matiere</th>
+                <td>{{ enseigant.matiere }}</td>
+            </tr>
+            <tr>
+                <th>Departement</th>
+                <td>{{ enseigant.departement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_enseigant_index') }}">back to list</a>
+
+    <a href="{{ path('app_enseigant_edit', {'id': enseigant.id}) }}">edit</a>
+
+    {{ include('enseigant/_delete_form.html.twig') }}
+{% endblock %}

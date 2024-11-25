@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New QuantiteCommande{% endblock %}
+
+{% block body %}
+    <h1>Create new QuantiteCommande</h1>
+
+    {{ include('quantite_commande/_form.html.twig') }}
+
+    <a href="{{ path('app_quantite_commande_index') }}">back to list</a>
+{% endblock %}

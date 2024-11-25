@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enseigant index{% endblock %}
+
+{% block body %}
+    <h1>Enseigant index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Matiere</th>
+                <th>Departement</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enseigant in enseigants %}
+            <tr>
+                <td>{{ enseigant.id }}</td>
+                <td>{{ enseigant.matiere }}</td>
+                <td>{{ enseigant.departement }}</td>
+                <td>
+                    <a href="{{ path('app_enseigant_show', {'id': enseigant.id}) }}">show</a>
+                    <a href="{{ path('app_enseigant_edit', {'id': enseigant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_enseigant_new') }}">Create new</a>
+{% endblock %}
