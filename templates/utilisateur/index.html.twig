@@ -3,7 +3,9 @@
 {% block title %}Utilisateur index{% endblock %}
 
 {% block body %}
-    <h1>Utilisateur index</h1>
+    <h1 class="custom-heading">Utilisateur Index</h1>
+
+
 
     <table class="table">
         <thead>
@@ -23,8 +25,8 @@
                 <td>{{ utilisateur.prenom }}</td>
                 <td>{{ utilisateur.email }}</td>
                 <td>
-                    <a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}">show</a>
-                    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">edit</a>
+                    <a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}" class= "btn btn-success">show</a>
+                    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}" class="btn btn-success">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_utilisateur_new') }}">Create new</a>
+    <a href="{{ path('app_utilisateur_new') }}" class="btn btn-success">Create new</a>
 {% endblock %}
